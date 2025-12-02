@@ -118,7 +118,7 @@ body {
 
 .Banner_text p {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-weight: 300;
 }
 
@@ -130,6 +130,7 @@ body {
     border-radius: 25px;
     font-size: 18px;
     cursor: pointer;
+    margin-top: 31px;
 }
 
 .Banner_text button:hover {
@@ -191,25 +192,26 @@ body {
 }
 
 .card {
-  width: 180px;
-  height: 120px;
-  background-color: #0052FF;
-  color: white;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 22px;
-  text-align: center;
-  line-height: 1.3;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    width: 180px;
+    height: 120px;
+    background-color: #0052FF;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.3;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-preview {
     max-width: 1040px;
     margin: 10px auto 50px auto;
     padding: 0 20px;
+    text-align: center;
 }
 
 .gallery-row {
@@ -224,7 +226,7 @@ body {
     max-width: 320px;
     height: 190px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 0;
 }
 
 .gallery-link,
@@ -264,7 +266,7 @@ body {
     margin: 10px auto 50px auto;
     padding: 0 20px;
     display: flex;
-    gap: 28px;
+    gap: 36px;
     align-items: center;
 }
 
@@ -275,12 +277,15 @@ body {
 .route-image img {
     width: 100%;
     border-radius: 12px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .route-text {
     flex: 1;
     font-size: 14px;
     color: #555555;
+    margin-left: 50px;
 }
 
 .route-text h3 {
@@ -304,7 +309,7 @@ body {
 
 .feature-row {
     display: flex;
-    gap: 22px;
+    gap: 36px;
     align-items: center;
 }
 
@@ -315,12 +320,15 @@ body {
 .feature-img img {
     width: 100%;
     border-radius: 12px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .feature-text {
     flex: 1;
     font-size: 14px;
     color: #555555;
+    margin-left: 60px;
 }
 
 .feature-text h3 {
@@ -328,6 +336,7 @@ body {
     margin-bottom: 8px;
     font-weight: 600;
 }
+
 .sponsors-section {
     background-color: #e9f0ff;
     padding: 35px 20px 40px;
@@ -344,6 +353,7 @@ body {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: 600;
+    color: #6f6f6f;
 }
 
 .sponsor-logos {
@@ -422,6 +432,7 @@ body {
 .form-column button:hover {
     background-color: #0040c0;
 }
+
 .image-column {
     flex: 1 1 50%;
     min-height: 260px;
@@ -434,6 +445,7 @@ body {
     width: 400px;
     border-radius: 20px;
 }
+
 .footer {
     background-color: #0055ff;
     color: #ffffff;
