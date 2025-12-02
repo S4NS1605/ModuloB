@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -31,6 +32,7 @@ body {
     color: #333333;
 }
 
+/* ===== NAVBAR / BANNER DESKTOP ===== */
 
 .nav {
     position: absolute;
@@ -74,12 +76,10 @@ body {
     opacity: 0.7;
 }
 
-
 .Contenedor {
     width: 100%;
     margin: 0 auto;
 }
-
 
 .Banner {
     position: relative;
@@ -161,7 +161,7 @@ body {
     background-color: #ffffff;
 }
 
-
+/* ===== ABOUT ===== */
 
 .about {
     max-width: 900px;
@@ -194,7 +194,6 @@ body {
     font-weight: 600;
 }
 
-
 .cards {
     display: flex;
     justify-content: center;
@@ -218,6 +217,8 @@ body {
     line-height: 1.3;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* ===== GALLERY PREVIEW DESKTOP ===== */
 
 .gallery-preview {
     max-width: 1040px;
@@ -247,7 +248,7 @@ body {
     display: inline-block;
     margin-top: 20px;
     font-size: 14px;
-    color: #ff2b7b; 
+    color: #ff2b7b;
     font-weight: 700;
     text-decoration: none;
     padding-right: 18px;
@@ -274,6 +275,7 @@ body {
     100% { transform: translate(6px, -50%); }
 }
 
+/* ===== ROUTE / FEATURES DESKTOP ===== */
 
 .route-section {
     max-width: 1040px;
@@ -337,7 +339,6 @@ body {
     font-weight: 600;
 }
 
-
 .route-image img,
 .feature-img img {
     width: 100%;
@@ -347,6 +348,7 @@ body {
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 }
 
+/* ===== SPONSORS DESKTOP ===== */
 
 .sponsors-section {
     background-color: #e9f0ff;
@@ -386,6 +388,7 @@ body {
     opacity: 1;
 }
 
+/* ===== REGISTER DESKTOP ===== */
 
 .register-section {
     background-color: #f4f4f4;
@@ -430,8 +433,6 @@ body {
     background-color: #f7f7f7;
 }
 
-
-
 .form-column button {
     margin-top: 10px;
     padding: 10px 28px;
@@ -456,8 +457,6 @@ body {
     align-items: stretch;
 }
 
-
-
 .image-column img {
     width: 100%;
     border-radius: 20px;
@@ -465,7 +464,7 @@ body {
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
 }
 
-
+/* ===== FOOTER ===== */
 
 .footer {
     background-color: #0055ff;
@@ -488,46 +487,288 @@ body {
     margin: 0 6px;
 }
 
-
-
 @media (max-width: 768px) {
+
+    /* NAV oculta en móvil */
     .nav {
-        padding: 10px 20px;
+        display: none;
     }
 
-    .Banner_text h1 {
-        font-size: 32px;
-    }
-
+    /* BANNER: persona centrada, sin triángulo */
     .Banner {
-        height: 420px;
+        height: 520px;
     }
 
-    .route-section,
-    .feature-row,
-    .register-card {
-        flex-direction: column;
+    .Banner_bg {
+        clip-path: none;                 /* sin corte triangular */
+        transform: none;                 /* sin espejo */
+        background-position: center 60%; /* centra mejor a la persona corriendo */
     }
 
-    .route-image,
-    .feature-img,
-    .form-column,
-    .image-column {
-        flex: 1 1 100%;
-        padding: 20px;
+    .Banner_text {
+        padding: 0 24px;
+    }
+
+    /* ULTRABALATON arriba, 2023 abajo. TEAM CHALLENGE oculto */
+    .Banner_text h1:first-child {
+        font-size: 0;              /* ocultamos el texto original en una sola línea */
+    }
+
+    .Banner_text h1:first-child::before,
+    .Banner_text h1:first-child::after {
+        display: block;
+        font-size: 34px;
+        line-height: 1.1;
+        letter-spacing: 1px;
+    }
+
+    .Banner_text h1:first-child::before {
+        content: "ULTRABALATON";
+    }
+
+    .Banner_text h1:first-child::after {
+        content: "2023";
+    }
+
+    .Banner_text h1:nth-of-type(2) {
+        display: none;             /* oculta TEAM CHALLENGE en móvil */
+    }
+
+    .Banner_text p {
+        font-size: 13px;
+        margin-bottom: 40px;
+    }
+
+    .Banner_text button {
+        font-size: 16px;
+        padding: 10px 40px;
+    }
+
+    .Banner_dots {
+        bottom: 20px;
+    }
+
+    /* ABOUT + TARJETAS */
+    .about {
+        margin: 40px auto 30px auto;
+        padding: 0 24px;
+    }
+
+    .about h2 {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .about .desc {
+        font-size: 13px;
+        line-height: 1.7;
     }
 
     .cards {
-        gap: 10px;
+        margin-top: 24px;
+        gap: 12px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
     }
 
     .card {
-        padding: 20px 20px;
-        font-size: 16px;
+        width: calc((100% - 24px) / 3);
+        height: 90px;
+        font-size: 13px;
+        padding: 0 6px;
+        line-height: 1.2;
     }
 
-    .gallery-row img {
-        max-width: 100%;
-        height: 180px;
+    /* GALERÍA: 4 fotos en orden y Full gallery debajo */
+    .gallery-preview {
+        max-width: 420px;
+        margin: 20px auto 36px auto;
+        padding: 0 16px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        text-align: center;
+    }
+
+    .gallery-row {
+        display: contents;   /* sus hijos pasan a ser ítems de la grilla */
+    }
+
+    .gallery-preview img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        max-width: none;
+    }
+
+    /* ocultar Runner on road para dejar solo 4 imágenes */
+    .gallery-preview img[alt="Runner on road"] {
+        display: none;
+    }
+
+    /* ordenar las 4 que quedan:
+       1) barco, 2) grupo, 3) páramo (Lake view), 4) piernas */
+    .gallery-preview img[alt="Sailboat on lake"] { order: 1; }
+    .gallery-preview img[alt="Runners group"]    { order: 2; }
+    .gallery-preview img[alt="Lake view"]        { order: 3; }
+    .gallery-preview img[alt="Runners legs"]     { order: 4; }
+
+    .gallery-link {
+        grid-column: 1 / -1;
+        order: 5;                 /* asegura que quede después de las 4 fotos */
+        display: inline-block;
+        margin-top: 8px;
+        margin-bottom: 4px;
+        text-align: center;
+        font-size: 13px;
+        justify-self: center;
+    }
+
+    /* ROUTE / FEATURES: imagen, texto, Learn more abajo */
+    .route-section {
+        max-width: 420px;
+        margin: 0 auto 30px auto;
+        padding: 0 16px;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .route-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .route-text {
+        flex: 0 0 auto;
+        margin-left: 0;
+        font-size: 13px;
+    }
+
+    .feature-section {
+        max-width: 420px;
+        margin: 0 auto 50px auto;
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .feature-row {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .feature-img {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .feature-text {
+        flex: 0 0 auto;
+        margin-left: 0;
+        font-size: 13px;
+    }
+
+    .route-image img,
+    .feature-img img {
+        height: 190px;
+        border-radius: 18px;
+    }
+
+    /* SPONSORS móvil: 2x2 y fondo más oscuro */
+    .sponsors-section {
+        background-color: #dce6ff;
+        padding: 30px 20px 30px;
+        margin-top: 10px;
+    }
+
+    .sponsors-inner h3 {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .sponsor-logos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 20px;
+        column-gap: 24px;
+        justify-items: center;
+    }
+
+    /* REGISTER móvil:
+       título -> foto -> "Sign up your team!" -> formulario */
+    .register-section {
+        padding: 40px 12px 50px;
+    }
+
+    .register-card {
+        max-width: 420px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 14px;
+        padding: 24px 22px 28px;
+    }
+
+    .form-column,
+    .image-column {
+        display: contents;
+        padding: 0;
+        min-height: 0;
+    }
+
+    .register-card h3 {
+        order: 1;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+
+    .register-card .image-column img {
+        order: 2;
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .register-card .form-column p {
+        order: 3;
+        text-align: center;
+        font-size: 12px;
+        margin: 6px 0 10px;
+    }
+
+    .register-card form {
+        order: 4;
+    }
+
+    .form-column input {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .form-column button {
+        width: 60%;
+        margin: 12px auto 0;
+        display: block;
+        font-size: 13px;
+    }
+
+    /* FOOTER móvil */
+    .footer {
+        font-size: 11px;
+        padding: 25px 16px 20px;
+    }
+
+    .footer-icons img {
+        margin: 0 10px;
+        height: 18px;
     }
 }
